@@ -1,0 +1,468 @@
+
+/* =========================================
+   NeonSnake - Responsive Design
+   Desktop / Tablet / Mobile
+   ========================================= */
+
+/* ---------- Large Screens ---------- */
+
+@media (min-width: 1440px) {
+  .app-container {
+    max-width: 1440px;
+    margin-inline: auto;
+  }
+
+  .game-layout {
+    gap: 28px;
+  }
+
+  .game-canvas-wrapper {
+    max-width: 760px;
+  }
+
+  .skin-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* ---------- Tablet Landscape ---------- */
+
+@media (max-width: 1100px) {
+  .app-container {
+    padding-inline: 20px;
+  }
+
+  .game-layout {
+    grid-template-columns: minmax(0, 1fr) 260px;
+    gap: 18px;
+  }
+
+  .game-sidebar {
+    min-width: 0;
+  }
+
+  .skin-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .diamond-pack-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* ---------- Tablet Portrait ---------- */
+
+@media (max-width: 850px) {
+  .app-container {
+    padding-inline: 16px;
+  }
+
+  .topbar {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .topbar-brand {
+    flex: 1;
+  }
+
+  .main-navigation {
+    width: 100%;
+    overflow-x: auto;
+    justify-content: flex-start;
+    scrollbar-width: none;
+  }
+
+  .main-navigation::-webkit-scrollbar {
+    display: none;
+  }
+
+  .game-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .game-sidebar {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .game-canvas-wrapper {
+    width: 100%;
+    max-width: 620px;
+    margin-inline: auto;
+  }
+
+  .skin-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .profile-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 600px) {
+  html {
+    font-size: 14px;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .app-container {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .topbar {
+    padding: 12px;
+    border-radius: 14px;
+  }
+
+  .topbar-brand {
+    font-size: 1.1rem;
+  }
+
+  .wallet {
+    gap: 8px;
+  }
+
+  .wallet-item {
+    padding: 7px 10px;
+    font-size: 0.85rem;
+  }
+
+  .main-navigation {
+    gap: 7px;
+    padding: 8px 0;
+  }
+
+  .nav-item {
+    flex: 0 0 auto;
+    padding: 9px 13px;
+    font-size: 0.85rem;
+  }
+
+  .page {
+    padding-block: 12px;
+  }
+
+  .page-header {
+    margin-bottom: 16px;
+  }
+
+  .page-title {
+    font-size: 1.4rem;
+  }
+
+  /* Game */
+
+  .game-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .game-main {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .game-canvas-wrapper {
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 14px;
+  }
+
+  #gameCanvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  .game-controls {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .game-controls button {
+    flex: 1 1 100px;
+    min-height: 42px;
+  }
+
+  .game-sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .game-sidebar > * {
+    width: 100%;
+  }
+
+  .mobile-controls {
+    display: grid;
+    grid-template-columns: repeat(3, 54px);
+    grid-template-rows: repeat(2, 48px);
+    justify-content: center;
+    gap: 7px;
+    margin: 16px auto;
+  }
+
+  .mobile-controls button {
+    min-width: 0;
+    min-height: 0;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  .mobile-controls button[data-direction="up"] {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .mobile-controls button[data-direction="left"] {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .mobile-controls button[data-direction="down"] {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .mobile-controls button[data-direction="right"] {
+    grid-column: 3;
+    grid-row: 2;
+  }
+
+  /* Stats */
+
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+  }
+
+  .stat-card {
+    padding: 12px;
+  }
+
+  .stat-value {
+    font-size: 1.2rem;
+  }
+
+  /* Store */
+
+  .shop-toolbar {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .shop-toolbar > * {
+    min-width: 0;
+  }
+
+  .skin-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .skin-card {
+    min-width: 0;
+    padding: 10px;
+  }
+
+  .skin-preview {
+    min-height: 100px;
+  }
+
+  .skin-name {
+    font-size: 0.9rem;
+  }
+
+  .skin-price {
+    font-size: 0.85rem;
+  }
+
+  .skin-card button {
+    width: 100%;
+    min-height: 38px;
+    padding-inline: 7px;
+    font-size: 0.8rem;
+  }
+
+  .legendary-banner {
+    padding: 18px 12px;
+  }
+
+  .diamond-showcase {
+    padding: 18px 12px;
+  }
+
+  .diamond-pack-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .diamond-pack {
+    min-width: 0;
+    padding: 12px 8px;
+  }
+
+  /* Profile */
+
+  .profile-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  /* Modal */
+
+  .modal {
+    width: calc(100% - 24px);
+    max-width: 440px;
+    max-height: 85dvh;
+    overflow-y: auto;
+    margin: auto;
+  }
+
+  .modal-content {
+    padding: 16px;
+  }
+
+  /* Toast */
+
+  .toast-container {
+    right: 12px;
+    left: 12px;
+    bottom: 12px;
+    width: auto;
+  }
+
+  .toast {
+    width: 100%;
+  }
+
+  /* Footer */
+
+  .app-footer {
+    padding: 18px 10px;
+    text-align: center;
+  }
+}
+
+/* ---------- Small Mobile ---------- */
+
+@media (max-width: 380px) {
+  html {
+    font-size: 13px;
+  }
+
+  .app-container {
+    padding: 9px;
+  }
+
+  .wallet-item {
+    padding: 6px 8px;
+  }
+
+  .skin-grid {
+    gap: 8px;
+  }
+
+  .skin-card {
+    padding: 8px;
+  }
+
+  .mobile-controls {
+    grid-template-columns: repeat(3, 48px);
+    grid-template-rows: repeat(2, 44px);
+  }
+
+  .diamond-pack-grid {
+    gap: 8px;
+  }
+
+  .stats-grid {
+    gap: 7px;
+  }
+}
+
+/* ---------- Landscape Mobile ---------- */
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .app-container {
+    padding-block: 8px;
+  }
+
+  .topbar {
+    padding-block: 8px;
+  }
+
+  .game-layout {
+    grid-template-columns: minmax(0, 1fr) 220px;
+    align-items: start;
+  }
+
+  .game-canvas-wrapper {
+    max-width: min(65vh, 500px);
+    margin-inline: auto;
+  }
+
+  .mobile-controls {
+    display: none;
+  }
+
+  .game-sidebar {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* ---------- Touch Devices ---------- */
+
+@media (hover: none) and (pointer: coarse) {
+  button,
+  .nav-item,
+  .skin-card {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  button {
+    touch-action: manipulation;
+  }
+
+  .hover-glow:hover,
+  .hover-scale:hover {
+    transform: none;
+    filter: none;
+  }
+
+  .hover-scale:active {
+    transform: scale(0.96);
+  }
+}
+
+/* ---------- Reduced Screen Motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .skin-card,
+  .nav-item,
+  button,
+  .game-canvas-wrapper {
+    scroll-behavior: auto;
+    transition: none !important;
+  }
+}
