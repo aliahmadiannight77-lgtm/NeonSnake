@@ -8,6 +8,7 @@
 @import url('./store.css');
 @import url('./animations.css');
 @import url('./responsive.css');
+@import url('./language-selector.css');
 
 /* ---------- Application ---------- */
 
@@ -758,5 +759,102 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
+  }
+}
+
+/* =========================================
+   NEONSNAKE — MULTILINGUAL HEADER
+========================================= */
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.topbar__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.topbar__actions .language-trigger {
+  order: 1;
+}
+
+.topbar__actions .icon-button {
+  order: 2;
+}
+
+.player-wallet {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.language-trigger {
+  white-space: nowrap;
+}
+
+html[dir="ltr"] .topbar {
+  direction: ltr;
+}
+
+html[dir="rtl"] .topbar {
+  direction: rtl;
+}
+
+html[dir="ltr"] .main-navigation,
+html[dir="ltr"] .game-layout,
+html[dir="ltr"] .game-stats,
+html[dir="ltr"] .profile-stats-grid {
+  direction: ltr;
+}
+
+html[dir="rtl"] .main-navigation,
+html[dir="rtl"] .game-layout,
+html[dir="rtl"] .game-stats,
+html[dir="rtl"] .profile-stats-grid {
+  direction: rtl;
+}
+
+/* Game canvas must never inherit text direction */
+#gameCanvas,
+.game-board-wrapper {
+  direction: ltr;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .topbar {
+    gap: 12px;
+  }
+
+  .topbar__actions {
+    gap: 7px;
+  }
+
+  .language-trigger {
+    min-height: 38px;
+    padding: 6px 9px;
+  }
+
+  .language-trigger__name {
+    font-size: 11px;
+  }
+
+  .player-wallet {
+    gap: 7px;
+  }
+}
+
+@media (max-width: 380px) {
+  .topbar__actions {
+    width: 100%;
+    justify-content: flex-end;
   }
 }

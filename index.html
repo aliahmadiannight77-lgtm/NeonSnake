@@ -8,10 +8,10 @@
 
   <meta
     name="description"
-    content="NeonSnake - یک بازی مار با دنیای نئونی، اسکین‌های افسانه‌ای و چالش‌های جذاب"
+    content="NeonSnake - A neon snake game with legendary skins and exciting challenges."
   >
 
-  <title>NeonSnake | دنیای نئون</title>
+  <title>NeonSnake</title>
 
   <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
   <link rel="stylesheet" href="/src/styles/main.css">
@@ -32,6 +32,7 @@
 
     <!-- Header -->
     <header class="topbar">
+
       <a class="brand" href="#" aria-label="NeonSnake Home">
         <div class="brand-icon">N</div>
         <div class="brand-info">
@@ -41,107 +42,168 @@
       </a>
 
       <div class="player-wallet">
+
         <div class="wallet-item coin-wallet">
           <span class="wallet-icon">◈</span>
           <div>
-            <small>سکه</small>
+            <small data-i18n="common.coins">سکه</small>
             <strong id="coinBalance">0</strong>
           </div>
+
           <button
             class="wallet-add"
             id="openCoinShop"
             type="button"
             aria-label="خرید سکه"
+            data-i18n-aria-label="shop.buy"
           >+</button>
         </div>
 
         <div class="wallet-item diamond-wallet">
           <span class="wallet-icon">◆</span>
           <div>
-            <small>الماس</small>
+            <small data-i18n="common.diamonds">الماس</small>
             <strong id="diamondBalance">0</strong>
           </div>
+
           <button
             class="wallet-add"
             id="openDiamondShop"
             type="button"
             aria-label="خرید الماس"
+            data-i18n-aria-label="shop.diamonds"
           >+</button>
         </div>
+
       </div>
 
-      <button
-        class="icon-button"
-        id="openSettings"
-        type="button"
-        aria-label="تنظیمات"
-        title="تنظیمات"
-      >⚙</button>
+      <div class="topbar__actions">
+
+        <!-- Language Selector Trigger -->
+        <button
+          class="language-trigger"
+          id="languageSelectorTrigger"
+          type="button"
+          aria-label="انتخاب زبان"
+          aria-haspopup="dialog"
+          aria-expanded="false"
+        >
+          <span class="language-trigger__flag" aria-hidden="true">🇮🇷</span>
+          <span class="language-trigger__name">فارسی</span>
+          <span class="language-trigger__arrow" aria-hidden="true">⌄</span>
+        </button>
+
+        <button
+          class="icon-button"
+          id="openSettings"
+          type="button"
+          aria-label="تنظیمات"
+          title="تنظیمات"
+          data-i18n-title="settings.title"
+        >⚙</button>
+
+      </div>
     </header>
 
     <!-- Main Navigation -->
     <nav class="main-navigation" aria-label="منوی اصلی">
-      <button class="nav-item active" data-page="game" type="button">
+
+      <button
+        class="nav-item active"
+        data-page="game"
+        type="button"
+      >
         <span>▣</span>
-        <span>بازی</span>
+        <span data-i18n="navigation.game">بازی</span>
       </button>
 
-      <button class="nav-item" data-page="snakes" type="button">
+      <button
+        class="nav-item"
+        data-page="snakes"
+        type="button"
+      >
         <span>〰</span>
-        <span>اسکین‌ها</span>
+        <span data-i18n="shop.regularSnakes">اسکین‌ها</span>
       </button>
 
-      <button class="nav-item" data-page="legendary" type="button">
+      <button
+        class="nav-item"
+        data-page="legendary"
+        type="button"
+      >
         <span>✧</span>
-        <span>افسانه‌ای</span>
+        <span data-i18n="shop.legendarySnakes">افسانه‌ای</span>
       </button>
 
-      <button class="nav-item" data-page="diamonds" type="button">
+      <button
+        class="nav-item"
+        data-page="diamonds"
+        type="button"
+      >
         <span>◆</span>
-        <span>الماس</span>
+        <span data-i18n="shop.diamonds">الماس</span>
       </button>
 
-      <button class="nav-item" data-page="profile" type="button">
+      <button
+        class="nav-item"
+        data-page="profile"
+        type="button"
+      >
         <span>◉</span>
-        <span>پروفایل</span>
+        <span data-i18n="navigation.profile">پروفایل</span>
       </button>
+
     </nav>
 
     <!-- Main Content -->
     <main class="main-content">
 
       <!-- Game Page -->
-      <section class="page active" id="gamePage" data-page-content="game">
+      <section
+        class="page active"
+        id="gamePage"
+        data-page-content="game"
+      >
 
         <div class="section-heading">
           <div>
             <span class="eyebrow">ARCADE EXPERIENCE</span>
-            <h1>آماده‌ای وارد میدان بشی؟</h1>
-            <p>رکوردت رو بشکن و در دنیای نئون زنده بمون.</p>
+            <h1 data-i18n="home.title">آماده‌ای وارد میدان بشی؟</h1>
+            <p data-i18n="home.subtitle">
+              رکوردت رو بشکن و در دنیای نئون زنده بمون.
+            </p>
           </div>
 
           <div class="level-display">
-            <span>LEVEL</span>
+            <span data-i18n="game.level">LEVEL</span>
             <strong id="playerLevel">1</strong>
           </div>
         </div>
 
         <!-- Game Statistics -->
         <div class="game-stats">
+
           <div class="stat-card">
-            <span class="stat-label">امتیاز فعلی</span>
+            <span class="stat-label" data-i18n="game.currentScore">
+              امتیاز فعلی
+            </span>
             <strong id="currentScore">0</strong>
           </div>
 
           <div class="stat-card">
-            <span class="stat-label">بالاترین رکورد</span>
+            <span class="stat-label" data-i18n="game.bestScore">
+              بالاترین رکورد
+            </span>
             <strong id="bestScore">0</strong>
           </div>
 
           <div class="stat-card">
-            <span class="stat-label">غذای جمع‌آوری‌شده</span>
+            <span class="stat-label" data-i18n="game.score">
+              غذای جمع‌آوری‌شده
+            </span>
             <strong id="foodCollected">0</strong>
           </div>
+
         </div>
 
         <!-- Game Board -->
@@ -150,32 +212,56 @@
           <div class="game-panel">
 
             <div class="game-panel-header">
+
               <div class="game-status">
-                <span class="status-indicator" id="gameStatusIndicator"></span>
-                <span id="gameStatusText">آماده شروع</span>
+                <span
+                  class="status-indicator"
+                  id="gameStatusIndicator"
+                ></span>
+
+                <span
+                  id="gameStatusText"
+                  data-i18n="game.ready"
+                >آماده شروع</span>
               </div>
 
               <div class="game-mode">
                 <span>CLASSIC MODE</span>
               </div>
+
             </div>
 
-            <div class="game-board-wrapper" id="gameBoardWrapper">
+            <div
+              class="game-board-wrapper"
+              id="gameBoardWrapper"
+            >
 
               <canvas
                 id="gameCanvas"
                 width="600"
                 height="600"
                 aria-label="صفحه بازی مار"
+                data-i18n-aria-label="game.title"
                 role="img"
+                dir="ltr"
               ></canvas>
 
               <div class="game-overlay" id="gameOverlay">
+
                 <div class="overlay-content">
                   <div class="overlay-logo">N</div>
+
                   <span class="overlay-eyebrow">NEON ARCADE</span>
-                  <h2 id="overlayTitle">آماده شروعی؟</h2>
-                  <p id="overlayMessage">
+
+                  <h2
+                    id="overlayTitle"
+                    data-i18n="game.ready"
+                  >آماده شروعی؟</h2>
+
+                  <p
+                    id="overlayMessage"
+                    data-i18n="game.getReady"
+                  >
                     غذاها رو جمع کن، رشد کن و مراقب برخورد با موانع باش.
                   </p>
 
@@ -185,42 +271,64 @@
                     type="button"
                   >
                     <span>▶</span>
-                    شروع بازی
+                    <span data-i18n="game.start">شروع بازی</span>
                   </button>
+
                 </div>
               </div>
 
             </div>
 
+            <!-- Game Actions -->
             <div class="game-controls">
-              <button class="control-button" id="pauseGame" type="button" disabled>
-                Ⅱ توقف
+
+              <button
+                class="control-button"
+                id="pauseGame"
+                type="button"
+                disabled
+              >
+                Ⅱ <span data-i18n="game.pause">توقف</span>
               </button>
 
-              <button class="control-button" id="restartGame" type="button">
-                ↻ شروع مجدد
+              <button
+                class="control-button"
+                id="restartGame"
+                type="button"
+              >
+                ↻ <span data-i18n="game.restart">شروع مجدد</span>
               </button>
 
-              <button class="control-button" id="toggleSound" type="button">
-                ♫ صدا روشن
+              <button
+                class="control-button"
+                id="toggleSound"
+                type="button"
+              >
+                ♫ <span data-i18n="settings.sound">صدا روشن</span>
               </button>
+
             </div>
 
-            <p class="keyboard-hint">
+            <p class="keyboard-hint" data-i18n="controls.keyboard">
               کنترل با کلیدهای جهت‌دار یا WASD
             </p>
+
           </div>
 
           <!-- Selected Snake -->
           <aside class="game-sidebar">
 
             <div class="sidebar-card selected-snake-card">
+
               <div class="card-heading">
-                <h3>مار انتخاب‌شده</h3>
+                <h3 data-i18n="shop.currentSkin">مار انتخاب‌شده</h3>
                 <span class="live-tag">ACTIVE</span>
               </div>
 
-              <div class="snake-preview" id="selectedSnakePreview">
+              <div
+                class="snake-preview"
+                id="selectedSnakePreview"
+              >
                 <div class="snake-preview-placeholder">〰</div>
               </div>
 
@@ -233,157 +341,244 @@
                 class="secondary-button"
                 data-open-page="snakes"
                 type="button"
+                data-i18n="shop.selectSkin"
               >
                 مشاهده اسکین‌ها
               </button>
+
             </div>
 
             <div class="sidebar-card mission-card">
+
               <div class="card-heading">
-                <h3>هدف امروز</h3>
+                <h3 data-i18n="missions.daily">هدف امروز</h3>
                 <span>DAILY</span>
               </div>
 
               <p id="dailyMissionText">۵ غذا جمع‌آوری کن.</p>
 
               <div class="progress-track">
-                <div class="progress-fill" id="dailyMissionProgress"></div>
+                <div
+                  class="progress-fill"
+                  id="dailyMissionProgress"
+                ></div>
               </div>
 
               <div class="mission-footer">
                 <span id="dailyMissionCount">0 / 5</span>
-                <strong>+50 سکه</strong>
+                <strong>+50 <span data-i18n="common.coins">سکه</span></strong>
               </div>
+
             </div>
 
           </aside>
+
         </div>
 
         <!-- Mobile Controls -->
-        <div class="mobile-controls" id="mobileControls">
-          <button data-direction="up" type="button" aria-label="بالا">▲</button>
+        <div
+          class="mobile-controls"
+          id="mobileControls"
+          aria-label="کنترل لمسی"
+          data-i18n-aria-label="controls.touch"
+        >
+
+          <button
+            data-direction="up"
+            type="button"
+            aria-label="بالا"
+          >▲</button>
 
           <div class="mobile-control-row">
-            <button data-direction="right" type="button" aria-label="راست">▶</button>
-            <button data-direction="down" type="button" aria-label="پایین">▼</button>
-            <button data-direction="left" type="button" aria-label="چپ">◀</button>
+
+            <button
+              data-direction="right"
+              type="button"
+              aria-label="راست"
+            >▶</button>
+
+            <button
+              data-direction="down"
+              type="button"
+              aria-label="پایین"
+            >▼</button>
+
+            <button
+              data-direction="left"
+              type="button"
+              aria-label="چپ"
+            >◀</button>
+
           </div>
+
         </div>
 
       </section>
 
       <!-- Regular Skins Page -->
-      <section class="page" id="snakesPage" data-page-content="snakes">
+      <section
+        class="page"
+        id="snakesPage"
+        data-page-content="snakes"
+      >
 
         <div class="section-heading">
           <div>
             <span class="eyebrow">SNAKE COLLECTION</span>
-            <h1>گالری اسکین‌ها</h1>
-            <p>ظاهر مار خودت رو انتخاب کن.</p>
+            <h1 data-i18n="shop.regularSnakes">گالری اسکین‌ها</h1>
+            <p data-i18n="shop.selectSkin">
+              ظاهر مار خودت رو انتخاب کن.
+            </p>
           </div>
         </div>
 
         <div class="shop-toolbar">
-          <span>اسکین‌های معمولی</span>
-          <span id="regularSkinCount">0 اسکین</span>
+          <span data-i18n="shop.regularSnakes">اسکین‌های معمولی</span>
+          <span id="regularSkinCount">0</span>
         </div>
 
-        <div class="skin-grid" id="regularSkinGrid"></div>
+        <div
+          class="skin-grid"
+          id="regularSkinGrid"
+        ></div>
 
       </section>
 
       <!-- Legendary Skins Page -->
-      <section class="page" id="legendaryPage" data-page-content="legendary">
+      <section
+        class="page"
+        id="legendaryPage"
+        data-page-content="legendary"
+      >
 
         <div class="section-heading">
           <div>
             <span class="eyebrow">LEGENDARY COLLECTION</span>
-            <h1>اسکین‌های افسانه‌ای</h1>
-            <p>کمیاب‌ترین ظاهرها برای بازیکنان حرفه‌ای.</p>
+            <h1 data-i18n="shop.legendarySnakes">
+              اسکین‌های افسانه‌ای
+            </h1>
+            <p data-i18n="shop.selectSkin">
+              کمیاب‌ترین ظاهرها برای بازیکنان حرفه‌ای.
+            </p>
           </div>
         </div>
 
         <div class="legendary-banner">
+
           <div>
             <span>EXCLUSIVE COLLECTION</span>
-            <h2>قدرت واقعی در دستان توست</h2>
-            <p>اسکین‌های ویژه با طراحی و افکت‌های منحصربه‌فرد.</p>
+
+            <h2 data-i18n="shop.legendarySnakes">
+              قدرت واقعی در دستان توست
+            </h2>
+
+            <p data-i18n="shop.currentSkin">
+              اسکین‌های ویژه با طراحی و افکت‌های منحصربه‌فرد.
+            </p>
           </div>
+
           <div class="legendary-symbol">✧</div>
+
         </div>
 
-        <div class="skin-grid legendary-grid" id="legendarySkinGrid"></div>
+        <div
+          class="skin-grid legendary-grid"
+          id="legendarySkinGrid"
+        ></div>
 
       </section>
 
       <!-- Diamond Shop Page -->
-      <section class="page" id="diamondsPage" data-page-content="diamonds">
+      <section
+        class="page"
+        id="diamondsPage"
+        data-page-content="diamonds"
+      >
 
         <div class="section-heading">
           <div>
             <span class="eyebrow">PREMIUM CURRENCY</span>
-            <h1>فروشگاه الماس</h1>
-            <p>الماس تهیه کن و به آیتم‌های ویژه دسترسی پیدا کن.</p>
+            <h1 data-i18n="shop.diamonds">فروشگاه الماس</h1>
+            <p data-i18n="economy.earnDiamonds">
+              الماس تهیه کن و به آیتم‌های ویژه دسترسی پیدا کن.
+            </p>
           </div>
         </div>
 
         <div class="diamond-showcase">
+
           <div class="diamond-large-icon">◆</div>
+
           <div>
-            <span>موجودی فعلی</span>
+            <span data-i18n="economy.balance">موجودی فعلی</span>
             <strong id="diamondShopBalance">0</strong>
             <small>DIAMONDS</small>
           </div>
+
         </div>
 
         <div class="shop-toolbar">
-          <span>بسته‌های الماس</span>
-          <span>پرداخت با سکه</span>
+          <span data-i18n="shop.diamonds">بسته‌های الماس</span>
+          <span data-i18n="shop.exchange">پرداخت با سکه</span>
         </div>
 
-        <div class="diamond-pack-grid" id="diamondPackGrid"></div>
+        <div
+          class="diamond-pack-grid"
+          id="diamondPackGrid"
+        ></div>
 
       </section>
 
       <!-- Profile Page -->
-      <section class="page" id="profilePage" data-page-content="profile">
+      <section
+        class="page"
+        id="profilePage"
+        data-page-content="profile"
+      >
 
         <div class="section-heading">
           <div>
             <span class="eyebrow">PLAYER PROFILE</span>
-            <h1>پروفایل بازیکن</h1>
-            <p>آمار و پیشرفت خودت رو بررسی کن.</p>
+            <h1 data-i18n="profile.title">پروفایل بازیکن</h1>
+            <p data-i18n="profile.achievements">
+              آمار و پیشرفت خودت رو بررسی کن.
+            </p>
           </div>
         </div>
 
         <div class="profile-card">
+
           <div class="profile-avatar">N</div>
+
           <div>
             <h2>NEON PLAYER</h2>
-            <span>بازیکن نئون</span>
+            <span data-i18n="profile.player">بازیکن نئون</span>
           </div>
+
         </div>
 
         <div class="profile-stats-grid">
+
           <div class="stat-card">
-            <span>بالاترین امتیاز</span>
+            <span data-i18n="profile.highestScore">بالاترین امتیاز</span>
             <strong id="profileBestScore">0</strong>
           </div>
 
           <div class="stat-card">
-            <span>بازی‌های انجام‌شده</span>
+            <span data-i18n="profile.totalGames">بازی‌های انجام‌شده</span>
             <strong id="gamesPlayed">0</strong>
           </div>
 
           <div class="stat-card">
-            <span>کل غذاها</span>
+            <span data-i18n="profile.totalScore">کل غذاها</span>
             <strong id="totalFoodCollected">0</strong>
           </div>
 
           <div class="stat-card">
-            <span>اسکین‌های بازشده</span>
+            <span data-i18n="profile.achievements">اسکین‌های بازشده</span>
             <strong id="unlockedSkins">0</strong>
           </div>
+
         </div>
 
       </section>
@@ -405,6 +600,7 @@
     id="modalBackdrop"
     aria-hidden="true"
   >
+
     <section
       class="modal"
       id="mainModal"
@@ -412,20 +608,35 @@
       aria-modal="true"
       aria-labelledby="modalTitle"
     >
+
       <div class="modal-header">
-        <h2 id="modalTitle">عنوان</h2>
+
+        <h2 id="modalTitle" data-i18n="common.confirm">
+          عنوان
+        </h2>
+
         <button
           class="modal-close"
           id="closeModal"
           type="button"
           aria-label="بستن"
+          data-i18n-aria-label="common.close"
         >×</button>
+
       </div>
 
-      <div class="modal-body" id="modalBody"></div>
+      <div
+        class="modal-body"
+        id="modalBody"
+      ></div>
 
-      <div class="modal-footer" id="modalFooter"></div>
+      <div
+        class="modal-footer"
+        id="modalFooter"
+      ></div>
+
     </section>
+
   </div>
 
   <!-- Toast Notifications -->
